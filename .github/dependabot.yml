@@ -5,3 +5,8 @@ updates:
       interval: weekly
     directory: /
     rebase-strategy: auto
+  - package-ecosystem: github-actions
+    schedule:
+      interval: weekly
+    directory: /
+    rebase-strategy: auto
