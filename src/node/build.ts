@@ -28,15 +28,7 @@ async function renderPage(render: () => string, root: string, csrBundle) {
   await fs.remove(join(root, '.temp'))
 }
 
-export default async function build(root = process.cwd()) {
-  const [csrBundle, ssrBundle] = await bundle(root)
-  const ssrChunk = ssrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
-  const serverEntryPath = join(root, '.temp', ssrChunk?.fileName)
-  const { render } = await import(serverEntryPath)
-  await renderPage(render as () => string, root, csrBundle)
-}
-
-export async function bundle(root: string) {
+async function bundle(root: string) {
   const resolveViteConfig = (isServer = false): InlineConfig => ({
     mode: 'production',
     root,
@@ -64,4 +56,12 @@ export async function bundle(root: string) {
   } catch (e) {
     console.log(e)
   }
+}
+
+export default async function build(root = process.cwd()) {
+  const [csrBundle, ssrBundle] = await bundle(root)
+  const ssrChunk = ssrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
+  const serverEntryPath = join(root, '.temp', ssrChunk?.fileName)
+  const { render } = await import(serverEntryPath)
+  await renderPage(render as () => string, root, csrBundle)
 }
