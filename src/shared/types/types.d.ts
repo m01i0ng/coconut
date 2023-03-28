@@ -3,3 +3,8 @@ declare module 'coconut:site-data' {
   const siteData: UserConfig
   export default siteData
 }
+
+declare module 'coconut:routes' {
+  import type { Route } from 'node/plugins/routes'
+  export const routes: Route[]
+}
