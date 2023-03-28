@@ -3,3 +3,5 @@ node_modules/
 docs/build
 .idea/
 test-results/
+build/
+.temp/

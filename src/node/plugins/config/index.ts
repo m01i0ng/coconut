@@ -1,10 +1,11 @@
-import { relative } from 'path'
+import { join, relative } from 'path'
 import { Plugin } from 'vite'
 import { SiteConfig } from '../../../shared/types'
+import { PACKAGE_ROOT } from '../../constants'
 
 const SITE_DATA_ID = 'coconut:site-data'
 
-export default function pluginConfig(config: SiteConfig, restartServer: () => Promise<void>): Plugin {
+export default function pluginConfig(config: SiteConfig, restartServer?: () => Promise<void>): Plugin {
   return {
     name: 'coconut:config',
     resolveId(id) {
@@ -23,6 +24,16 @@ export default function pluginConfig(config: SiteConfig, restartServer: () => Pr
       if (include(ctx.file)) {
         console.log(`\n${relative(config.root, ctx.file)} changed, restarting server...`)
         await restartServer()
+      }
+    },
+    config() {
+      return {
+        root: PACKAGE_ROOT,
+        resolve: {
+          alias: {
+            '@runtime': join(PACKAGE_ROOT, 'src', 'runtime', 'index.ts'),
+          },
+        },
       }
     },
   }

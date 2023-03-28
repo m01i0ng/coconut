@@ -3,10 +3,12 @@ import { CSR_ENTRY_PATH, SSR_ENTRY_PATH } from './constants'
 import pluginReact from '@vitejs/plugin-react'
 import { join } from 'path'
 import fse from 'fs-extra'
+import { SiteConfig } from '../shared/types'
+import pluginConfig from './plugins/config'
 
 async function renderPage(render: () => string, root: string, csrBundle) {
   const csrChunk = csrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
-  console.log(`Rendering page is server...`)
+  console.log(`Rendering page in server...`)
   const appHtml = render()
   const html = `
 <!DOCTYPE html>
@@ -28,14 +30,18 @@ async function renderPage(render: () => string, root: string, csrBundle) {
   await fse.remove(join(root, '.temp'))
 }
 
-async function bundle(root: string) {
+async function bundle(root: string, config: SiteConfig) {
   const resolveViteConfig = (isServer = false): InlineConfig => ({
     mode: 'production',
     root,
-    plugins: [pluginReact()],
+    plugins: [pluginReact(), pluginConfig(config)],
+    ssr: {
+      noExternal: ['react-router-dom'],
+    },
     build: {
+      minify: false,
       ssr: isServer,
-      outDir: isServer ? '.temp' : 'build',
+      outDir: isServer ? join(root, '.temp') : 'build',
       rollupOptions: {
         input: isServer ? SSR_ENTRY_PATH : CSR_ENTRY_PATH,
         output: {
@@ -58,10 +64,14 @@ async function bundle(root: string) {
   }
 }
 
-export default async function build(root = process.cwd()) {
-  const [csrBundle, ssrBundle] = await bundle(root)
+export default async function build(root = process.cwd(), config: SiteConfig) {
+  const [csrBundle, ssrBundle] = await bundle(root, config)
   const ssrChunk = ssrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
-  const serverEntryPath = join(root, '.temp', ssrChunk?.fileName)
+  const serverEntryPath = join(root, '.temp', ssrChunk.fileName)
   const { render } = await import(serverEntryPath)
-  await renderPage(render as () => string, root, csrBundle)
+  try {
+    await renderPage(render as () => string, root, csrBundle)
+  } catch (e) {
+    console.log(`Render page error.\n`, e)
+  }
 }
