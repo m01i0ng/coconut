@@ -5,6 +5,7 @@
     "rootDir": "src",
     "target": "ESNext",
     "allowSyntheticDefaultImports": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "esModuleInterop": true
   }
 }
