@@ -6,12 +6,13 @@ import rehypePluginSlug from 'rehype-slug'
 import remarkPluginMDXFrontMatter from 'remark-mdx-frontmatter'
 import remarkPluginFrontmatter from 'remark-frontmatter'
 import rehypePluginPreWrapper from './rehypePlugins/preWrapper'
+import rehypePluginShiki from './rehypePlugins/shiki'
+import { getHighlighter } from 'shiki'
 
-export function pluginMdxRollup(): Plugin {
+export async function pluginMdxRollup(): Promise<Plugin> {
   return mdx({
     remarkPlugins: [remarkPluginGFM, remarkPluginFrontmatter, [remarkPluginMDXFrontMatter, { name: 'frontmatter' }]],
     rehypePlugins: [
-      rehypePluginPreWrapper,
       rehypePluginSlug,
       [
         rehypePluginAutolinkHeadings,
@@ -23,6 +24,13 @@ export function pluginMdxRollup(): Plugin {
             type: 'text',
             value: '#',
           },
+        },
+      ],
+      rehypePluginPreWrapper,
+      [
+        rehypePluginShiki,
+        {
+          highlighter: await getHighlighter({ theme: 'nord' }),
         },
       ],
     ],
