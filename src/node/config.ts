@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { pathExistsSync } from 'fs-extra'
+import fse from 'fs-extra'
 import { SiteConfig, UserConfig } from '../shared/types'
 import { loadConfigFromFile } from 'vite'
 
@@ -8,7 +8,7 @@ type RawConfig = UserConfig | Promise<UserConfig> | (() => UserConfig | Promise<
 function getUserConfigPath(root: string) {
   try {
     const supportConfigFiles = ['config.ts', 'config.js']
-    return supportConfigFiles.map((f) => resolve(root, f)).find(pathExistsSync)
+    return supportConfigFiles.map((f) => resolve(root, f)).find(fse.pathExistsSync)
   } catch (e) {
     console.error(`Failed to load user config: ${e}`)
     throw e

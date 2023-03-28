@@ -2,7 +2,7 @@ import { build as viteBuild, InlineConfig, Rollup } from 'vite'
 import { CSR_ENTRY_PATH, SSR_ENTRY_PATH } from './constants'
 import pluginReact from '@vitejs/plugin-react'
 import { join } from 'path'
-import fs from 'fs-extra'
+import fse from 'fs-extra'
 
 async function renderPage(render: () => string, root: string, csrBundle) {
   const csrChunk = csrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
@@ -23,9 +23,9 @@ async function renderPage(render: () => string, root: string, csrBundle) {
   </body>
 </html>
   `.trim()
-  await fs.ensureDir(join(root, 'build'))
-  await fs.writeFile(join(root, 'build/index.html'), html)
-  await fs.remove(join(root, '.temp'))
+  await fse.ensureDir(join(root, 'build'))
+  await fse.writeFile(join(root, 'build/index.html'), html)
+  await fse.remove(join(root, '.temp'))
 }
 
 async function bundle(root: string) {
