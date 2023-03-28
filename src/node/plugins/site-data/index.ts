@@ -5,9 +5,9 @@ import { PACKAGE_ROOT } from '../../constants'
 
 const SITE_DATA_ID = 'coconut:site-data'
 
-export default function pluginConfig(config: SiteConfig, restartServer?: () => Promise<void>): Plugin {
+export default function pluginSiteData(config: SiteConfig, restartServer?: () => Promise<void>): Plugin {
   return {
-    name: 'coconut:config',
+    name: 'coconut:site-data',
     resolveId(id) {
       if (id === SITE_DATA_ID) {
         return '\0' + SITE_DATA_ID
@@ -23,7 +23,7 @@ export default function pluginConfig(config: SiteConfig, restartServer?: () => P
       const include = (id: string) => customWatchedFiles.some((f) => id.includes(f))
       if (include(ctx.file)) {
         console.log(`\n${relative(config.root, ctx.file)} changed, restarting server...`)
-        await restartServer()
+        await restartServer!()
       }
     },
     config() {

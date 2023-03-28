@@ -25,7 +25,7 @@ export default function pluginRoutes(options: PluginOptions): Plugin {
     },
     load(id: string) {
       if (id === '\0' + ROUTE_ID) {
-        return `export const routes = []`
+        return routeService.generateRouteCode()
       }
     },
     async configResolved() {

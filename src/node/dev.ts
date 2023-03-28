@@ -1,23 +1,15 @@
-import { createServer } from 'vite'
-import pluginReact from '@vitejs/plugin-react'
+import { createServer, ViteDevServer } from 'vite'
 import { PACKAGE_ROOT } from './constants'
 import { resolveConfig } from './config'
-import pluginIndexHtml from './plugins/indexHtml'
-import pluginSiteData from './plugins/siteData'
-import pluginRoutes from './plugins/routes'
+import { createVitePlugins } from './vitePlugins'
 
-export async function createDevServer(root = process.cwd(), restartServer: () => Promise<void>) {
+export async function createDevServer(
+  root = process.cwd(),
+  restartServer: () => Promise<void>,
+): Promise<ViteDevServer> {
   const config = await resolveConfig(root, 'serve', 'development')
   return createServer({
-    root: PACKAGE_ROOT,
-    plugins: [
-      pluginReact(),
-      pluginIndexHtml(),
-      pluginSiteData(config, restartServer),
-      pluginRoutes({
-        root: config.root,
-      }),
-    ],
+    plugins: createVitePlugins(config, restartServer),
     server: {
       fs: {
         allow: [PACKAGE_ROOT],

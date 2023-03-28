@@ -1,4 +1,4 @@
-import { UserConfig as ViteUserConfig } from 'vite'
+import { UserConfig as ViteConfig } from 'vite'
 
 export interface NavItemWithLink {
   text: string
@@ -31,7 +31,7 @@ export interface UserConfig {
   title?: string
   description?: string
   themeConfig?: ThemeConfig
-  vite?: ViteUserConfig
+  vite?: ViteConfig
 }
 
 export interface SiteConfig {

@@ -1,10 +1,9 @@
 import { build as viteBuild, InlineConfig, Rollup } from 'vite'
 import { CSR_ENTRY_PATH, SSR_ENTRY_PATH } from './constants'
-import pluginReact from '@vitejs/plugin-react'
 import { join } from 'path'
 import fse from 'fs-extra'
 import { SiteConfig } from '../shared/types'
-import pluginSiteData from './plugins/siteData'
+import { createVitePlugins } from './vitePlugins'
 
 async function renderPage(render: () => string, root: string, csrBundle) {
   const csrChunk = csrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
@@ -34,7 +33,7 @@ async function bundle(root: string, config: SiteConfig) {
   const resolveViteConfig = (isServer = false): InlineConfig => ({
     mode: 'production',
     root,
-    plugins: [pluginReact(), pluginSiteData(config)],
+    plugins: createVitePlugins(config),
     ssr: {
       noExternal: ['react-router-dom'],
     },
@@ -51,11 +50,9 @@ async function bundle(root: string, config: SiteConfig) {
     },
   })
 
-  console.log('Building csr + ssr bundles')
-
   try {
     const [csrBundle, ssrBundle] = await Promise.all([
-      viteBuild(resolveViteConfig()),
+      viteBuild(resolveViteConfig(false)),
       viteBuild(resolveViteConfig(true)),
     ])
     return [csrBundle, ssrBundle] as [Rollup.RollupOutput, Rollup.RollupOutput]
