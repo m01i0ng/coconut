@@ -18,4 +18,13 @@ describe('markdown compile cases', () => {
     const result = processor.processSync(mdContent)
     expect(result.value).toMatchInlineSnapshot('"<p>I am using <code>coconut.js</code></p>"')
   })
+
+  test('compile code block', async () => {
+    const mdContent = '```js\nconsole.log(123);```\n'
+    const result = processor.processSync(mdContent)
+    expect(result.value).toMatchInlineSnapshot(`
+      "<pre><code class=\\"language-js\\">console.log(123);\`\`\`
+      </code></pre>"
+    `)
+  })
 })

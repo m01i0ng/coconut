@@ -7,6 +7,7 @@ specifiers:
   '@mdx-js/rollup': ^2.3.0
   '@playwright/test': ^1.32.1
   '@types/fs-extra': ^11.0.1
+  '@types/hast': ^2.3.4
   '@types/node': ^18.15.10
   '@types/react': ^18.0.30
   '@types/react-dom': ^18.0.11
@@ -22,6 +23,7 @@ specifiers:
   execa: ^7.1.1
   fast-glob: ^3.2.12
   fs-extra: ^11.1.1
+  hast: ^1.0.0
   husky: ^8.0.0
   lint-staged: ^13.2.0
   prettier: ^2.8.7
@@ -41,6 +43,7 @@ specifiers:
   tsx: ^3.12.6
   typescript: ^4.9.5
   unified: ^10.1.2
+  unist-util-visit: ^4.1.2
   vite: ^4.2.1
   vitest: ^0.29.7
 
@@ -51,6 +54,7 @@ dependencies:
   cac: 6.7.14
   fast-glob: 3.2.12
   fs-extra: 11.1.1
+  hast: 1.0.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.9.0_biqbaboplfbrettd7655fr4n2y
@@ -63,6 +67,7 @@ dependencies:
   remark-parse: 10.0.1
   remark-rehype: 10.1.0
   unified: 10.1.2
+  unist-util-visit: 4.1.2
   vite: 4.2.1_@types+node@18.15.10
 
 devDependencies:
@@ -70,6 +75,7 @@ devDependencies:
   '@commitlint/config-conventional': 17.4.4
   '@playwright/test': 1.32.1
   '@types/fs-extra': 11.0.1
+  '@types/hast': 2.3.4
   '@types/node': 18.15.10
   '@types/react': 18.0.30
   '@types/react-dom': 18.0.11
@@ -958,7 +964,6 @@ packages:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
     dependencies:
       '@types/unist': 2.0.6
-    dev: false
 
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
@@ -1027,7 +1032,6 @@ packages:
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
-    dev: false
 
   /@typescript-eslint/eslint-plugin/5.56.0_iskin7c6dxqunwflhstekcjqmq:
     resolution: {integrity: sha512-ZNW37Ccl3oMZkzxrYDUX4o7cnuPgU+YrcaYXzsRtLB16I1FR5SHMqga3zGsaSliZADCWo2v8qHWqAYIj8nWCCg==}
@@ -2754,6 +2758,11 @@ packages:
 
   /hast-util-whitespace/2.0.1:
     resolution: {integrity: sha512-nAxA0v8+vXSBDt3AnRUNjyRIQ0rD+ntpbAp4LnPkumc5M9yUbSMa4XDU9Q6etY4f1Wp4bNgvc1yjiZtsTTrSng==}
+    dev: false
+
+  /hast/1.0.0:
+    resolution: {integrity: sha512-vFUqlRV5C+xqP76Wwq2SrM0kipnmpxJm7OfvVXpB35Fp+Fn4MV+ozr+JZr5qFvyR1q/U+Foim2x+3P+x9S1PLA==}
+    deprecated: Renamed to rehype
     dev: false
 
   /hastscript/7.2.0:
