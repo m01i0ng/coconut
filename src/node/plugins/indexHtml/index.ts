@@ -2,7 +2,7 @@ import { Plugin } from 'vite'
 import { readFile } from 'fs/promises'
 import { CSR_ENTRY_PATH, DEFAULT_TEMPLATE_PATH } from '../../constants'
 
-export function pluginIndexHtml(): Plugin {
+export default function pluginIndexHtml(): Plugin {
   return {
     name: 'coconut:index-html',
     apply: 'serve',
