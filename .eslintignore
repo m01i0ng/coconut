@@ -1,1 +1,6 @@
-bin/coconut.js
+node_modules/
+package.json
+pnpm-lock.yaml
+dist/
+bin/
+docs/
