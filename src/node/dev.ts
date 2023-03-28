@@ -3,7 +3,7 @@ import pluginReact from '@vitejs/plugin-react'
 import { PACKAGE_ROOT } from './constants'
 import { resolveConfig } from './config'
 import pluginIndexHtml from './plugins/indexHtml'
-import pluginConfig from './plugins/config'
+import pluginSiteData from './plugins/siteData'
 import pluginRoutes from './plugins/routes'
 
 export async function createDevServer(root = process.cwd(), restartServer: () => Promise<void>) {
@@ -13,7 +13,7 @@ export async function createDevServer(root = process.cwd(), restartServer: () =>
     plugins: [
       pluginReact(),
       pluginIndexHtml(),
-      pluginConfig(config, restartServer),
+      pluginSiteData(config, restartServer),
       pluginRoutes({
         root: config.root,
       }),

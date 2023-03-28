@@ -4,7 +4,7 @@ import pluginReact from '@vitejs/plugin-react'
 import { join } from 'path'
 import fse from 'fs-extra'
 import { SiteConfig } from '../shared/types'
-import pluginConfig from './plugins/config'
+import pluginSiteData from './plugins/siteData'
 
 async function renderPage(render: () => string, root: string, csrBundle) {
   const csrChunk = csrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
@@ -34,7 +34,7 @@ async function bundle(root: string, config: SiteConfig) {
   const resolveViteConfig = (isServer = false): InlineConfig => ({
     mode: 'production',
     root,
-    plugins: [pluginReact(), pluginConfig(config)],
+    plugins: [pluginReact(), pluginSiteData(config)],
     ssr: {
       noExternal: ['react-router-dom'],
     },
