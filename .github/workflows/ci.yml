@@ -9,37 +9,59 @@ on:
 jobs:
   unit-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 16
+          - 18
     steps:
       - uses: actions/checkout@v3
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
 
-      - name: Set node version to 18
+      - name: Set node version to ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{ matrix.node-version }}
           cache: pnpm
 
-      - run: pnpm i
+      - name: Install deps with dependabot
+        if: ${{ github.actor == 'dependabot[bot]' }}
+        run: pnpm i --no-frozen-lockfile
+
+      - name: Install deps normally
+        if: ${{ github.actor != 'dependabot[bot]' }}
+        run: pnpm i
 
       - name: Run unit tests
         run: pnpm run test:unit
   e2e-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 16
+          - 18
     steps:
       - uses: actions/checkout@v3
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
 
-      - name: Set node version to 18
+      - name: Set node version to ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{ matrix.node-version }}
           cache: pnpm
 
-      - run: pnpm i
+      - name: Install deps with dependabot
+        if: ${{ github.actor == 'dependabot[bot]' }}
+        run: pnpm i --no-frozen-lockfile
+
+      - name: Install deps normally
+        if: ${{ github.actor != 'dependabot[bot]' }}
+        run: pnpm i
 
       - name: Run e2e tests
         run: pnpm run test:e2e
