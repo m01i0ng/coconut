@@ -33,7 +33,7 @@ async function renderPage(render: RenderFunc, routes: Route[], root: string, csr
       const filename = routePath.endsWith('/') ? `${routePath}index.html` : `${routePath}.html`
 
       await fse.ensureDir(join(root, 'build', dirname(filename)))
-      await fse.writeFile(join(root, filename), html)
+      await fse.writeFile(join(root, 'build', filename), html)
     }),
   )
 }
@@ -71,9 +71,8 @@ async function bundle(root: string, config: SiteConfig) {
 }
 
 export default async function build(root = process.cwd(), config: SiteConfig) {
-  const [csrBundle, ssrBundle] = await bundle(root, config)
-  const ssrChunk = ssrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
-  const serverEntryPath = join(root, '.temp', ssrChunk.fileName)
+  const [csrBundle] = await bundle(root, config)
+  const serverEntryPath = join(root, '.temp', 'ssr-entry.js')
   const { render, routes } = await import(serverEntryPath)
   try {
     await renderPage(render as RenderFunc, routes as Route[], root, csrBundle)
