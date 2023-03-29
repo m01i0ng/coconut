@@ -33,7 +33,7 @@
       "eslint --fix"
     ]
   },
-  "packageManager": "pnpm@7.29.1",
+  "packageManager": "pnpm@7.30.5",
   "dependencies": {
     "@loadable/component": "^5.15.3",
     "@mdx-js/rollup": "^2.3.0",
