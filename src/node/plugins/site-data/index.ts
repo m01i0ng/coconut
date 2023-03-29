@@ -4,6 +4,7 @@ import { SiteConfig } from '../../../shared/types'
 import { PACKAGE_ROOT } from '../../constants'
 import fse from 'fs-extra'
 import sirv from 'sirv'
+import chalk from 'chalk'
 
 const SITE_DATA_ID = 'coconut:site-data'
 
@@ -24,7 +25,7 @@ export default function pluginSiteData(config: SiteConfig, restartServer?: () =>
       const customWatchedFiles = [config.configPath]
       const include = (id: string) => customWatchedFiles.some((f) => id.includes(f))
       if (include(ctx.file)) {
-        console.log(`\n${relative(config.root, ctx.file)} changed, restarting server...`)
+        console.log(chalk.green(`\n${relative(config.root, ctx.file)} changed, restarting server...`))
         await restartServer!()
       }
     },

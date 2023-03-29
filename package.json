@@ -38,6 +38,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "acorn": "^8.8.2",
     "cac": "^6.7.14",
+    "chalk": "^5.2.0",
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.1",
     "github-slugger": "^2.0.0",

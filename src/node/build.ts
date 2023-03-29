@@ -5,11 +5,12 @@ import fse from 'fs-extra'
 import { SiteConfig } from '../shared/types'
 import { createVitePlugins } from './vitePlugins'
 import { Route } from './plugins/routes'
+import chalk from 'chalk'
 
 type RenderFunc = (routePath: string) => string
 
 async function renderPage(render: RenderFunc, routes: Route[], root: string, csrBundle) {
-  console.log(`Rendering page in server...`)
+  console.log(chalk.green('Rendering pages...'))
   const csrChunk = csrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
   // 顶层路由遍历，生成多入口并行打包任务
   return Promise.all(
@@ -82,6 +83,6 @@ export default async function build(root = process.cwd(), config: SiteConfig) {
   try {
     await renderPage(render as RenderFunc, routes as Route[], root, csrBundle)
   } catch (e) {
-    console.log(`Render page error.\n`, e)
+    console.log(chalk.bold.red('Render error'))
   }
 }
