@@ -6,7 +6,7 @@ import rehypePluginPreWrapper from '../plugins/mdx/rehypePlugins/preWrapper'
 import rehypePluginShiki from '../plugins/mdx/rehypePlugins/shiki'
 import { getHighlighter } from 'shiki'
 import rehypeStringify from 'rehype-stringify'
-import remarkPluginToc from '../plugins/mdx/remarkPlusins/toc'
+import remarkPluginToc from '../plugins/mdx/remarkPlugins/toc'
 import remarkMdx from 'remark-mdx'
 import remarkStringify from 'remark-stringify'
 
