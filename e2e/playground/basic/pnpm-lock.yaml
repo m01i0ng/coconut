@@ -1,7 +1,6 @@
-lockfileVersion: 5.4
-
-specifiers:
-  coconut: ../../..
+lockfileVersion: '6.0'
 
 dependencies:
-  coconut: link:../../..
+  coconut:
+    specifier: ../../..
+    version: link:../../..
