@@ -2,6 +2,8 @@ import { join, relative } from 'path'
 import { Plugin } from 'vite'
 import { SiteConfig } from '../../../shared/types'
 import { PACKAGE_ROOT } from '../../constants'
+import fse from 'fs-extra'
+import sirv from 'sirv'
 
 const SITE_DATA_ID = 'coconut:site-data'
 
@@ -39,6 +41,17 @@ export default function pluginSiteData(config: SiteConfig, restartServer?: () =>
             localsConvention: 'camelCaseOnly',
           },
         },
+      }
+    },
+    configureServer(server) {
+      const publicDir = join(config.root, 'public')
+      if (fse.pathExistsSync(publicDir)) {
+        server.middlewares.use(
+          sirv(publicDir, {
+            maxAge: 31536000,
+            immutable: true,
+          }),
+        )
       }
     },
   }

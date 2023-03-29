@@ -18,6 +18,7 @@ module.exports = {
     'prefer-arrow-callback': 'error',
     'max-params': 'off',
     'react/no-unknown-property': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
   },
   settings: {},
 }
