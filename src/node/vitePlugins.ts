@@ -28,6 +28,40 @@ const unocssOptions: VitePluginConfig = {
       },
     ],
   ],
+  shortcuts: {
+    'flex-center': 'flex justify-center items-center',
+  },
+  theme: {
+    colors: {
+      brandLight: 'var(--coconut-c-brand-light)',
+      brandDark: 'var(--coconut-c-brand-dark)',
+      brand: 'var(--coconut-c-brand)',
+      text: {
+        1: 'var(--coconut-c-text-1)',
+        2: 'var(--coconut-c-text-2)',
+        3: 'var(--coconut-c-text-3)',
+        4: 'var(--coconut-c-text-4)',
+      },
+      divider: {
+        default: 'var(--coconut-c-divider)',
+        light: 'var(--coconut-c-divider-light)',
+        dark: 'var(--coconut-c-divider-dark)',
+      },
+      gray: {
+        light: {
+          1: 'var(--coconut-c-gray-light-1)',
+          2: 'var(--coconut-c-gray-light-2)',
+          3: 'var(--coconut-c-gray-light-3)',
+          4: 'var(--coconut-c-gray-light-4)',
+        },
+      },
+      bg: {
+        default: 'var(--coconut-c-bg)',
+        soft: 'var(--coconut-c-bg-soft)',
+        mute: 'var(--coconut-c-bg-mute)',
+      },
+    },
+  },
 }
 
 export function createVitePlugins(config: SiteConfig, restartServer?: () => Promise<void>, isSSR = false) {

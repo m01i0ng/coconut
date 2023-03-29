@@ -15,6 +15,8 @@ export interface FrontMatter {
   pageType?: PageType
   sidebar?: boolean
   outline?: boolean
+  features?: Feature[]
+  hero?: Hero
 }
 
 export interface PageData {
@@ -27,7 +29,28 @@ export interface PageData {
 
 export interface PageModule {
   default: ComponentType
-  frontMatter?: FrontMatter
+  frontmatter?: FrontMatter
 
   [key: string]: unknown
+}
+
+export interface Feature {
+  icon: string
+  title: string
+  details: string
+}
+
+export interface Hero {
+  name: string
+  text: string
+  tagLine: string
+  image?: {
+    src: string
+    alt: string
+  }
+  actions: {
+    text: string
+    link: string
+    theme: 'brand' | 'alt'
+  }[]
 }

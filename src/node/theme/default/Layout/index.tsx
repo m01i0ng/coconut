@@ -1,26 +1,28 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { usePageData } from '../../../../runtime'
 import Nav from '../components/Nav'
 import '../style/base.css'
 import '../style/vars.css'
 import 'uno.css'
+import HomeLayout from './HomeLayout'
 
 export default function Layout() {
   const { pageType } = usePageData()
 
-  const content = useMemo(() => {
+  const getContent = () => {
     if (pageType === 'home') {
-      return <div>Home</div>
+      return <HomeLayout />
     } else if (pageType === 'doc') {
       return <div>Doc</div>
     } else {
       return <div>404</div>
     }
-  }, [pageType])
+  }
 
   return (
     <div>
       <Nav />
+      {getContent()}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { Plugin } from 'vite'
 import { ReactElement } from 'react'
 import { RouteService } from './RouteService'
-import { PageModule } from '../../../shared/types/page'
+import { PageModule } from '../../../shared/types'
 
 export interface Route {
   path: string
