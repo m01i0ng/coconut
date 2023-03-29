@@ -17,6 +17,7 @@ module.exports = {
     'prefer-const': 'error',
     'prefer-arrow-callback': 'error',
     'max-params': 'off',
+    'react/no-unknown-property': 'off',
   },
   settings: {},
 }
