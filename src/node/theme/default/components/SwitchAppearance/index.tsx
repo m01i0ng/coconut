@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import React from 'react'
 
-import { toggle } from '../../logic/toggleAppearance'
+import useDarkMode from '../../hooks/useDarkMode'
 import styles from './index.module.scss'
 
 interface SwitchProps {
@@ -11,25 +11,27 @@ interface SwitchProps {
   id?: string
 }
 
-const Switch: FC<SwitchProps> = (props) => {
+const Switch: FC<SwitchProps> = ({ children, className, id, onClick }) => {
   return (
     <button
-      className={`${styles.switch} ${props.className}`}
-      id={props.id ?? ''}
+      className={`${styles.switch} ${className}`}
+      id={id ?? ''}
       type="button"
       role="switch"
-      {...(props.onClick ? { onClick: props.onClick } : {})}
+      {...(onClick ? { onClick: onClick } : {})}
     >
       <span className={styles.check}>
-        <span className={styles.icon}>{props.children}</span>
+        <span className={styles.icon}>{children}</span>
       </span>
     </button>
   )
 }
 
 export default function SwitchAppearance() {
+  const { toggleDarkMode } = useDarkMode()
+
   return (
-    <Switch onClick={toggle}>
+    <Switch onClick={toggleDarkMode}>
       <div className={styles.sun}>
         <div className="i-carbon-sun" w="full" h="full" />
       </div>

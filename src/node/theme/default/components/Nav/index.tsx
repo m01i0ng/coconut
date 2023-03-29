@@ -15,7 +15,8 @@ export function MenuItem(item: NavItemWithLink) {
 
 export default function Nav() {
   const { siteData } = usePageData()
-  const nav = siteData.themeConfig.nav || []
+  const nav = siteData?.themeConfig?.nav || []
+
   return (
     <header fixed="~" pos="t-0 l-0" w="full">
       <div flex="~" items="center" justify="between" className="px-8 h-14 divider-bottom">

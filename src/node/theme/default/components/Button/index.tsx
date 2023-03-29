@@ -5,7 +5,7 @@ import Link from '../Link'
 import styles from './index.module.scss'
 
 interface ButtonProps {
-  type?: string
+  type?: 'button' | 'a'
   size?: 'medium' | 'big'
   theme?: 'brand' | 'alt'
   text: string
@@ -20,25 +20,25 @@ const Button: FC<ButtonProps> = ({
   href = '/',
   external = false,
   className = '',
-  type: rawType,
+  type = 'a',
   text,
 }) => {
-  let type: string | typeof Link | null
+  const classNames = [styles.button, styles[theme], styles[size], className].join(' ')
+  const props =
+    type === 'a'
+      ? {
+          className: classNames,
+          href: external ? href : undefined,
+        }
+      : {
+          className: classNames,
+          type: 'button',
+        }
 
-  if (rawType === 'button') {
-    type = 'button'
-  } else if (rawType === 'a') {
-    type = external ? 'a' : Link
-  }
+  const children = type === 'a' ? text : undefined
+  const Component = type === 'a' ? (external ? 'a' : Link) : 'button'
 
-  return createElement(
-    type ?? 'a',
-    {
-      className: `${styles.button} ${styles[theme]} ${styles[size]} ${className}`,
-      href,
-    },
-    text,
-  )
+  return createElement(Component, { ...props }, children)
 }
 
 export default Button

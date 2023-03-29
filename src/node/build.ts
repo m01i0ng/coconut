@@ -86,5 +86,6 @@ export default async function build(root = process.cwd(), config: SiteConfig) {
     await renderPage(render as RenderFunc, routes as Route[], root, csrBundle)
   } catch (e) {
     console.log(chalk.bold.red('Render error'))
+    console.log(e)
   }
 }
