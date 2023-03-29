@@ -34,6 +34,11 @@ export default function pluginSiteData(config: SiteConfig, restartServer?: () =>
             '@runtime': join(PACKAGE_ROOT, 'src', 'runtime', 'index.ts'),
           },
         },
+        css: {
+          modules: {
+            localsConvention: 'camelCaseOnly',
+          },
+        },
       }
     },
   }

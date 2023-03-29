@@ -1,0 +1,356 @@
+/**
+ * Colors Base
+ *
+ * These are the pure base color presets. Most of the time, you should not be
+ * using these colors directly in the theme but rather use "Colors Theme"
+ * instead because those are "Theme (light or dark)" dependant.
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-c-white: #ffffff;
+  --coconut-c-white-soft: #f9f9f9;
+  --coconut-c-white-mute: #f1f1f1;
+
+  --coconut-c-black: #1a1a1a;
+  --coconut-c-black-pure: #000000;
+  --coconut-c-black-soft: #242424;
+  --coconut-c-black-mute: #2f2f2f;
+
+  --coconut-c-gray: #8e8e8e;
+  --coconut-c-gray-light-1: #aeaeae;
+  --coconut-c-gray-light-2: #c7c7c7;
+  --coconut-c-gray-light-3: #d1d1d1;
+  --coconut-c-gray-light-4: #e5e5e5;
+  --coconut-c-gray-light-5: #f2f2f2;
+  --coconut-c-gray-dark-1: #636363;
+  --coconut-c-gray-dark-2: #484848;
+  --coconut-c-gray-dark-3: #3a3a3a;
+  --coconut-c-gray-dark-4: #282828;
+  --coconut-c-gray-dark-5: #202020;
+
+  --coconut-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --coconut-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --coconut-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --coconut-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --coconut-c-indigo: #213547;
+  --coconut-c-indigo-soft: #476582;
+  --coconut-c-indigo-light: #aac8e4;
+  --coconut-c-indigo-lighter: #c9def1;
+  --coconut-c-indigo-dark: #1d2f3f;
+  --coconut-c-indigo-darker: #14212e;
+
+  --coconut-c-text-light-1: var(--coconut-c-indigo);
+  --coconut-c-text-light-2: rgba(60, 60, 60, 0.7);
+  --coconut-c-text-light-3: rgba(60, 60, 60, 0.33);
+  --coconut-c-text-light-4: rgba(60, 60, 60, 0.18);
+
+  --coconut-c-text-dark-1: rgba(255, 255, 255, 0.87);
+  --coconut-c-text-dark-2: rgba(235, 235, 235, 0.6);
+  --coconut-c-text-dark-3: rgba(235, 235, 235, 0.38);
+  --coconut-c-text-dark-4: rgba(235, 235, 235, 0.18);
+
+  --coconut-c-green: #21b8a3;
+  --coconut-c-green-light: #41c6b0;
+  --coconut-c-green-lighter: #41c6b0;
+  --coconut-c-green-dark: #149684;
+  --coconut-c-green-darker: #149684;
+  --coconut-c-green-dimm: #062521;
+
+  --coconut-c-green-dimm-1: rgba(66, 184, 131, 0.5);
+  --coconut-c-green-dimm-2: rgba(66, 184, 131, 0.25);
+  --coconut-c-green-dimm-3: rgba(66, 184, 131, 0.05);
+
+  --coconut-c-blue: #646cff;
+  --coconut-c-blue-light: #747bff;
+  --coconut-c-blue-lighter: #9499ff;
+  --coconut-c-blue-lightest: #bcc0ff;
+  --coconut-c-blue-dark: #535bf2;
+  --coconut-c-blue-darker: #454ce1;
+  --coconut-c-blue-dimm: rgba(100, 108, 255, 0.08);
+
+  --coconut-c-yellow: #ffc517;
+  --coconut-c-yellow-light: #fcd253;
+  --coconut-c-yellow-lighter: #fcfc7c;
+  --coconut-c-yellow-darker: #ad850e;
+  --coconut-c-yellow-dimm-1: rgba(255, 197, 23, 0.5);
+  --coconut-c-yellow-dimm-2: rgba(255, 197, 23, 0.25);
+  --coconut-c-yellow-dimm-3: rgba(255, 197, 23, 0.05);
+
+  --coconut-c-red: #ed3c50;
+  --coconut-c-red-light: #f54e82;
+  --coconut-c-red-lighter: #fd1d7c;
+  --coconut-c-red-darker: #ab2131;
+  --coconut-c-red-dimm-1: rgba(237, 60, 80, 0.5);
+  --coconut-c-red-dimm-2: rgba(237, 60, 80, 0.25);
+  --coconut-c-red-dimm-3: rgba(237, 60, 80, 0.05);
+}
+
+/**
+ * Colors Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-c-bg: var(--coconut-c-white);
+  --coconut-c-bg-soft: var(--coconut-c-white-soft);
+  --coconut-c-bg-mute: var(--coconut-c-white-mute);
+  --coconut-c-bg-alt: var(--coconut-c-white-soft);
+
+  --coconut-c-divider: var(--coconut-c-divider-light-1);
+  --coconut-c-divider-light: var(--coconut-c-divider-light-2);
+
+  --coconut-c-text-1: var(--coconut-c-text-light-1);
+  --coconut-c-text-2: var(--coconut-c-text-light-2);
+  --coconut-c-text-3: var(--coconut-c-text-light-3);
+  --coconut-c-text-4: var(--coconut-c-text-light-4);
+
+  --coconut-c-text-code: var(--coconut-c-indigo-soft);
+
+  --coconut-c-brand: var(--coconut-c-green);
+  --coconut-c-brand-light: var(--coconut-c-green-light);
+  --coconut-c-brand-lighter: var(--coconut-c-green-lighter);
+  --coconut-c-brand-dark: var(--coconut-c-green-dark);
+  --coconut-c-brand-darker: var(--coconut-c-green-darker);
+}
+
+.dark {
+  --coconut-c-bg: var(--coconut-c-black-soft);
+  --coconut-c-bg-soft: var(--coconut-c-black-mute);
+  --coconut-c-bg-mute: var(--coconut-c-gray-dark-3);
+  --coconut-c-bg-alt: var(--coconut-c-black);
+
+  --coconut-c-divider: var(--coconut-c-divider-dark-1);
+  --coconut-c-divider-light: var(--coconut-c-divider-dark-2);
+
+  --coconut-c-divider-inverse: var(--coconut-c-divider-light-1);
+  --coconut-c-divider-inverse-light: var(--coconut-c-divider-light-2);
+
+  --coconut-c-text-1: var(--coconut-c-text-dark-1);
+  --coconut-c-text-2: var(--coconut-c-text-dark-2);
+  --coconut-c-text-3: var(--coconut-c-text-dark-3);
+  --coconut-c-text-4: var(--coconut-c-text-dark-4);
+
+  --coconut-c-text-inverse-1: var(--coconut-c-text-light-1);
+  --coconut-c-text-inverse-2: var(--coconut-c-text-light-2);
+  --coconut-c-text-inverse-3: var(--coconut-c-text-light-3);
+  --coconut-c-text-inverse-4: var(--coconut-c-text-light-4);
+
+  --coconut-c-text-code: var(--coconut-c-indigo-lighter);
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-font-family-base: 'Inter var experimental', 'Inter var',
+  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+  Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --coconut-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/**
+ * Layouts
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-layout-max-width: 1440px;
+}
+
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-code-line-height: 1.7;
+  --coconut-code-font-size: 0.875em;
+
+  --coconut-code-block-color: var(--coconut-c-text-dark-1);
+  --coconut-code-block-bg: #292d3e;
+
+  --coconut-code-line-highlight-color: rgba(0, 0, 0, 0.5);
+  --coconut-code-line-number-color: var(--coconut-c-text-dark-3);
+
+  --coconut-code-copy-code-hover-bg: rgba(255, 255, 255, 0.05);
+  --coconut-code-copy-code-active-text: var(--coconut-c-text-dark-2);
+}
+
+/**
+ * Icons
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-icon-copy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E");
+  --coconut-icon-copied: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E");
+  --coconut-icon-tip: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M512 960C264.58 960 64 759.42 64 512S264.58 64 512 64s448 200.58 448 448-200.58 448-448 448z m0-832c-212.08 0-384 171.92-384 384s171.92 384 384 384 384-171.92 384-384-171.92-384-384-384z m0 112c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z m0 160c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32 17.67 0 32-14.33 32-32V432c0-17.67-14.33-32-32-32z' fill='%2321b8a3'/%3E%3C/svg%3E");
+}
+
+.dark {
+  --coconut-code-block-bg: var(--coconut-c-bg-alt);
+}
+
+/**
+ * Z-indexes
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-z-index-local-nav: 10;
+  --coconut-z-index-nav: 20;
+  --coconut-z-index-layout-top: 30;
+  --coconut-z-index-backdrop: 40;
+  --coconut-z-index-sidebar: 50;
+  --coconut-z-index-footer: 60;
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-button-brand-border: var(--coconut-c-brand-light);
+  --coconut-button-brand-text: var(--coconut-c-text-dark-1);
+  --coconut-button-brand-bg: var(--coconut-c-brand);
+  --coconut-button-brand-hover-border: var(--coconut-c-brand-light);
+  --coconut-button-brand-hover-text: var(--coconut-c-text-dark-1);
+  --coconut-button-brand-hover-bg: var(--coconut-c-brand-light);
+  --coconut-button-brand-active-border: var(--coconut-c-brand-light);
+  --coconut-button-brand-active-text: var(--coconut-c-text-dark-1);
+  --coconut-button-brand-active-bg: var(--coconut-button-brand-bg);
+
+  --coconut-button-alt-border: var(--coconut-c-gray-light-3);
+  --coconut-button-alt-text: var(--coconut-c-text-light-1);
+  --coconut-button-alt-bg: var(--coconut-c-gray-light-5);
+  --coconut-button-alt-hover-border: var(--coconut-c-gray-light-3);
+  --coconut-button-alt-hover-text: var(--coconut-c-text-light-1);
+  --coconut-button-alt-hover-bg: var(--coconut-c-gray-light-4);
+  --coconut-button-alt-active-border: var(--coconut-c-gray-light-3);
+  --coconut-button-alt-active-text: var(--coconut-c-text-light-1);
+  --coconut-button-alt-active-bg: var(--coconut-c-gray-light-3);
+
+  --coconut-button-sponsor-border: var(--coconut-c-gray-light-3);
+  --coconut-button-sponsor-text: var(--coconut-c-text-light-2);
+  --coconut-button-sponsor-bg: transparent;
+  --coconut-button-sponsor-hover-border: var(--coconut-c-sponsor);
+  --coconut-button-sponsor-hover-text: var(--coconut-c-sponsor);
+  --coconut-button-sponsor-hover-bg: transparent;
+  --coconut-button-sponsor-active-border: var(--coconut-c-sponsor);
+  --coconut-button-sponsor-active-text: var(--coconut-c-sponsor);
+  --coconut-button-sponsor-active-bg: transparent;
+}
+
+.dark {
+  --coconut-button-brand-border: var(--coconut-c-brand-light);
+  --coconut-button-brand-text: var(--coconut-c-text-dark-1);
+  --coconut-button-brand-bg: var(--coconut-c-brand-dark);
+  --coconut-button-brand-hover-border: var(--coconut-c-brand-lighter);
+  --coconut-button-brand-hover-text: var(--coconut-c-text-dark-1);
+  --coconut-button-brand-hover-bg: var(--coconut-c-brand);
+  --coconut-button-brand-active-border: var(--coconut-c-brand-lighter);
+  --coconut-button-brand-active-text: var(--coconut-c-text-dark-1);
+  --coconut-button-brand-active-bg: var(--coconut-button-brand-bg);
+
+  --coconut-button-alt-border: var(--coconut-c-gray-dark-2);
+  --coconut-button-alt-text: var(--coconut-c-text-dark-1);
+  --coconut-button-alt-bg: var(--coconut-c-bg-mute);
+  --coconut-button-alt-hover-border: var(--coconut-c-gray-dark-2);
+  --coconut-button-alt-hover-text: var(--coconut-c-text-dark-1);
+  --coconut-button-alt-hover-bg: var(--coconut-c-gray-dark-2);
+  --coconut-button-alt-active-border: var(--coconut-c-gray-dark-2);
+  --coconut-button-alt-active-text: var(--coconut-c-text-dark-1);
+  --coconut-button-alt-active-bg: var(--coconut-button-alt-bg);
+
+  --coconut-button-sponsor-border: var(--coconut-c-gray-dark-1);
+  --coconut-button-sponsor-text: var(--coconut-c-text-dark-2);
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-custom-block-code-font-size: 13px;
+
+  --coconut-custom-block-info-border: var(--coconut-c-divider-light);
+  --coconut-custom-block-info-text: var(--coconut-c-text-2);
+  --coconut-custom-block-info-bg: var(--coconut-c-white-soft);
+  --coconut-custom-block-info-code-bg: var(--coconut-c-gray-light-4);
+
+  --coconut-custom-block-tip-border: var(--coconut-c-green-dimm-1);
+  --coconut-custom-block-tip-text: var(--coconut-c-green-darker);
+  --coconut-custom-block-tip-bg: var(--coconut-c-green-dimm-3);
+  --coconut-custom-block-tip-code-bg: var(--coconut-custom-block-tip-bg);
+
+  --coconut-custom-block-warning-border: var(--coconut-c-yellow-dimm-1);
+  --coconut-custom-block-warning-text: var(--coconut-c-yellow-darker);
+  --coconut-custom-block-warning-bg: var(--coconut-c-yellow-dimm-3);
+  --coconut-custom-block-warning-code-bg: var(--coconut-custom-block-warning-bg);
+
+  --coconut-custom-block-danger-border: var(--coconut-c-red-dimm-1);
+  --coconut-custom-block-danger-text: var(--coconut-c-red-darker);
+  --coconut-custom-block-danger-bg: var(--coconut-c-red-dimm-3);
+  --coconut-custom-block-danger-code-bg: var(--coconut-custom-block-danger-bg);
+}
+
+.dark {
+  --coconut-custom-block-info-border: var(--coconut-c-divider-light);
+  --coconut-custom-block-info-bg: var(--coconut-c-black-mute);
+  --coconut-custom-block-info-code-bg: var(--coconut-c-gray-dark-4);
+
+  --coconut-custom-block-tip-border: var(--coconut-c-green-dimm-2);
+  --coconut-custom-block-tip-text: var(--coconut-c-green-light);
+
+  --coconut-custom-block-warning-border: var(--coconut-c-yellow-dimm-2);
+  --coconut-custom-block-warning-text: var(--coconut-c-yellow-light);
+
+  --coconut-custom-block-danger-border: var(--coconut-c-red-dimm-2);
+  --coconut-custom-block-danger-text: var(--coconut-c-red-light);
+}
+
+/**
+ * Component: Nav
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-nav-height: 56px;
+}
+
+/**
+ * Component: Sidebar
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-sidebar-width: 272px;
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-home-hero-name-color: transparent;
+  --coconut-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    var(--coconut-c-brand) 30%,
+    #41d1ff
+  );
+
+  --coconut-home-hero-image-background-image: none;
+  --coconut-home-hero-image-filter: none;
+}
+
+/**
+ * Shadows
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --coconut-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04),
+  0 1px 2px rgba(0, 0, 0, 0.06);
+  --coconut-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07),
+  0 1px 4px rgba(0, 0, 0, 0.07);
+  --coconut-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1),
+  0 2px 6px rgba(0, 0, 0, 0.08);
+  --coconut-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12),
+  0 3px 9px rgba(0, 0, 0, 0.12);
+  --coconut-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16),
+  0 4px 12px rgba(0, 0, 0, 0.16);
+}

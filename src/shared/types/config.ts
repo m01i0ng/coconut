@@ -22,7 +22,7 @@ interface Footer {
 }
 
 export interface ThemeConfig {
-  nav?: NavItemWithLink
+  nav?: NavItemWithLink[]
   sidebar?: Sidebar
   footer?: Footer
 }
