@@ -2,8 +2,9 @@ import cac from 'cac'
 import { resolve } from 'path'
 import build from './build'
 import { resolveConfig } from './config'
+import packageJson from '../../package.json'
 
-const cli = cac('coconut').version('0.1.1').help()
+const cli = cac('coconut').version(packageJson.version).help()
 
 cli.command('dev [root]', 'start dev server').action(async (root: string) => {
   const createServer = async () => {
