@@ -1,4 +1,6 @@
-import { createElement, FC } from 'react'
+import type { FC } from 'react'
+import { createElement } from 'react'
+
 import Link from '../Link'
 import styles from './index.module.scss'
 

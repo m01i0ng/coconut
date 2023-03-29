@@ -1,4 +1,4 @@
-import { UserConfig as ViteConfig } from 'vite'
+import type { UserConfig as ViteConfig } from 'vite'
 
 export interface NavItemWithLink {
   text: string

@@ -1,11 +1,13 @@
-import { build as viteBuild, InlineConfig, Rollup } from 'vite'
-import { CSR_ENTRY_PATH, SSR_ENTRY_PATH } from './constants'
-import { dirname, join } from 'path'
-import fse from 'fs-extra'
-import { SiteConfig } from '../shared/types'
-import { createVitePlugins } from './vitePlugins'
-import { Route } from './plugins/routes'
 import chalk from 'chalk'
+import fse from 'fs-extra'
+import { dirname, join } from 'path'
+import type { InlineConfig, Rollup } from 'vite'
+import { build as viteBuild } from 'vite'
+
+import type { SiteConfig } from '../shared/types'
+import { CSR_ENTRY_PATH, SSR_ENTRY_PATH } from './constants'
+import type { Route } from './plugins/routes'
+import { createVitePlugins } from './vitePlugins'
 
 type RenderFunc = (routePath: string) => string
 

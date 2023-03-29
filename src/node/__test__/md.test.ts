@@ -1,14 +1,15 @@
-import { describe, expect, test } from 'vitest'
-import { unified } from 'unified'
+import rehypeStringify from 'rehype-stringify'
+import remarkMdx from 'remark-mdx'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
+import remarkStringify from 'remark-stringify'
+import { getHighlighter } from 'shiki'
+import { unified } from 'unified'
+import { describe, expect, test } from 'vitest'
+
 import rehypePluginPreWrapper from '../plugins/mdx/rehypePlugins/preWrapper'
 import rehypePluginShiki from '../plugins/mdx/rehypePlugins/shiki'
-import { getHighlighter } from 'shiki'
-import rehypeStringify from 'rehype-stringify'
 import remarkPluginToc from '../plugins/mdx/remarkPlugins/toc'
-import remarkMdx from 'remark-mdx'
-import remarkStringify from 'remark-stringify'
 
 describe('markdown compile cases', async () => {
   const processor = unified()

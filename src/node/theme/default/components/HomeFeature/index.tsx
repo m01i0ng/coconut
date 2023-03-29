@@ -1,5 +1,6 @@
-import { Feature } from '../../../../../shared/types'
-import { FC } from 'react'
+import type { FC } from 'react'
+
+import type { Feature } from '../../../../../shared/types'
 
 interface HomeFeatureProps {
   features: Feature[]

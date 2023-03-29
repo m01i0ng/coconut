@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { Plugin } from 'vite'
+import type { Plugin } from 'vite'
 
 const MD_REGEX = new RegExp(/\.mdx$/g)
 

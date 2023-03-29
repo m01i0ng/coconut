@@ -1,4 +1,5 @@
-import { Plugin } from 'vite'
+import type { Plugin } from 'vite'
+
 import { pluginMdxRollup } from './pluginMdxRollup'
 // import pluginMdxHmr from './pluginMdxHmr'
 

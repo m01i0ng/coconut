@@ -1,8 +1,9 @@
 import cac from 'cac'
 import { resolve } from 'path'
+
+import packageJson from '../../package.json'
 import build from './build'
 import { resolveConfig } from './config'
-import packageJson from '../../package.json'
 
 const cli = cac('coconut').version(packageJson.version).help()
 

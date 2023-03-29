@@ -1,10 +1,10 @@
-import { Plugin } from 'unified'
-import { Root } from 'mdast'
-import { visit } from 'unist-util-visit'
-import { slug } from 'github-slugger'
 import { parse } from 'acorn'
-import { Program } from 'mdast-util-mdxjs-esm/lib'
-import { MdxjsEsm } from 'mdast-util-mdxjs-esm'
+import { slug } from 'github-slugger'
+import type { Root } from 'mdast'
+import type { MdxjsEsm } from 'mdast-util-mdxjs-esm'
+import type { Program } from 'mdast-util-mdxjs-esm/lib'
+import type { Plugin } from 'unified'
+import { visit } from 'unist-util-visit'
 
 interface ChildNode {
   type: 'link' | 'text' | 'inlineCode'

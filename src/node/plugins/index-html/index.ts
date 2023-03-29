@@ -1,5 +1,6 @@
-import { Plugin } from 'vite'
 import { readFile } from 'fs/promises'
+import type { Plugin } from 'vite'
+
 import { CSR_ENTRY_PATH, DEFAULT_TEMPLATE_PATH } from '../../constants'
 
 export default function pluginIndexHtml(): Plugin {

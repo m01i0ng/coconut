@@ -1,5 +1,6 @@
-import { Hero } from '../../../../../shared/types'
-import { FC } from 'react'
+import type { FC } from 'react'
+
+import type { Hero } from '../../../../../shared/types'
 import Button from '../Button'
 import styles from './index.module.scss'
 

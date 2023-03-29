@@ -1,5 +1,6 @@
-import { describe, expect, test } from 'vitest'
 import { join } from 'path'
+import { describe, expect, test } from 'vitest'
+
 import { RouteService } from './RouteService'
 
 describe('RouteService', async () => {

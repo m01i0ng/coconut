@@ -1,11 +1,13 @@
-import { SiteConfig } from '../shared/types'
-import pluginIndexHtml from './plugins/index-html'
 import pluginReact from '@vitejs/plugin-react'
-import pluginSiteData from './plugins/site-data'
-import pluginRoutes from './plugins/routes'
-import pluginMdx from './plugins/mdx'
-import pluginUnocss, { VitePluginConfig } from 'unocss/vite'
 import { presetAttributify, presetIcons, presetWind } from 'unocss'
+import type { VitePluginConfig } from 'unocss/vite'
+import pluginUnocss from 'unocss/vite'
+
+import type { SiteConfig } from '../shared/types'
+import pluginIndexHtml from './plugins/index-html'
+import pluginMdx from './plugins/mdx'
+import pluginRoutes from './plugins/routes'
+import pluginSiteData from './plugins/site-data'
 
 const unocssOptions: VitePluginConfig = {
   presets: [presetAttributify(), presetWind(), presetIcons()],

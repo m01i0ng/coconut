@@ -1,6 +1,6 @@
+import type { Element, Root } from 'hast'
 import type { Plugin } from 'unified'
 import { visit } from 'unist-util-visit'
-import type { Element, Root } from 'hast'
 
 const rehypePluginPreWrapper: Plugin<[], Root> = () => {
   return (tree) => {

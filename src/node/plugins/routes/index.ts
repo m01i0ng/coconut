@@ -1,7 +1,8 @@
-import { Plugin } from 'vite'
-import { ReactElement } from 'react'
+import type { ReactElement } from 'react'
+import type { Plugin } from 'vite'
+
+import type { PageModule } from '../../../shared/types'
 import { RouteService } from './RouteService'
-import { PageModule } from '../../../shared/types'
 
 export interface Route {
   path: string

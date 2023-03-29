@@ -1,9 +1,10 @@
-import React from 'react'
-import Layout from '../node/theme/default/Layout'
-import { PageData } from '../shared/types'
-import { matchRoutes } from 'react-router-dom'
 import { routes } from 'coconut:routes'
 import siteData from 'coconut:site-data'
+import React from 'react'
+import { matchRoutes } from 'react-router-dom'
+
+import Layout from '../node/theme/default/Layout'
+import type { PageData } from '../shared/types'
 
 export async function initPageData(routePath: string): Promise<PageData> {
   const matched = matchRoutes(routes, routePath)

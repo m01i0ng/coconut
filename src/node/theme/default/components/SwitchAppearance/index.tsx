@@ -1,6 +1,8 @@
-import React, { FC } from 'react'
-import styles from './index.module.scss'
+import type { FC } from 'react'
+import React from 'react'
+
 import { toggle } from '../../logic/toggleAppearance'
+import styles from './index.module.scss'
 
 interface SwitchProps {
   onClick?: () => void
@@ -29,10 +31,10 @@ export default function SwitchAppearance() {
   return (
     <Switch onClick={toggle}>
       <div className={styles.sun}>
-        <div className="i-carbon-sun" w="full" h="full"></div>
+        <div className="i-carbon-sun" w="full" h="full" />
       </div>
       <div className={styles.moon}>
-        <div className="i-carbon-moon" w="full" h="full"></div>
+        <div className="i-carbon-moon" w="full" h="full" />
       </div>
     </Switch>
   )

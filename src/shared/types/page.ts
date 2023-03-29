@@ -1,5 +1,6 @@
-import { UserConfig } from './index'
-import { ComponentType } from 'react'
+import type { ComponentType } from 'react'
+
+import type { UserConfig } from './index'
 
 export type PageType = 'home' | 'doc' | 'custom' | '404'
 

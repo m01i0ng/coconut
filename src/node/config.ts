@@ -1,7 +1,8 @@
-import { resolve } from 'path'
 import fse from 'fs-extra'
-import { SiteConfig, UserConfig } from '../shared/types'
+import { resolve } from 'path'
 import { loadConfigFromFile } from 'vite'
+
+import type { SiteConfig, UserConfig } from '../shared/types'
 
 type RawConfig = UserConfig | Promise<UserConfig> | (() => UserConfig | Promise<UserConfig>)
 

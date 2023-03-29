@@ -1,8 +1,8 @@
-import { Highlighter } from 'shiki'
-import { Plugin } from 'unified'
-import { visit } from 'unist-util-visit'
+import type { Root, Text } from 'hast'
 import { fromHtml } from 'hast-util-from-html'
-import { Root, Text } from 'hast'
+import type { Highlighter } from 'shiki'
+import type { Plugin } from 'unified'
+import { visit } from 'unist-util-visit'
 
 interface Options {
   highlighter: Highlighter

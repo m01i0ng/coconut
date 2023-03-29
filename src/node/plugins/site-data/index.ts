@@ -1,10 +1,11 @@
-import { join, relative } from 'path'
-import { Plugin } from 'vite'
-import { SiteConfig } from '../../../shared/types'
-import { PACKAGE_ROOT } from '../../constants'
-import fse from 'fs-extra'
-import sirv from 'sirv'
 import chalk from 'chalk'
+import fse from 'fs-extra'
+import { join, relative } from 'path'
+import sirv from 'sirv'
+import type { Plugin } from 'vite'
+
+import type { SiteConfig } from '../../../shared/types'
+import { PACKAGE_ROOT } from '../../constants'
 
 const SITE_DATA_ID = 'coconut:site-data'
 

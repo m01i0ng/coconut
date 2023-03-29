@@ -1,28 +1,35 @@
-import React from 'react'
-import { usePageData } from '../../../../runtime'
-import Nav from '../components/Nav'
 import '../style/base.css'
 import '../style/vars.css'
 import 'uno.css'
+
+import React from 'react'
+
+import { usePageData } from '../../../../runtime'
+import type { PageType } from '../../../../shared/types'
+import Nav from '../components/Nav'
 import HomeLayout from './HomeLayout'
+
+const getContent = (pageType: PageType) => {
+  switch (pageType) {
+    case 'home':
+      return <HomeLayout />
+    case 'doc':
+      return <div>Doc</div>
+    case '404':
+      return <div>404</div>
+    case 'custom':
+    default:
+      return <div />
+  }
+}
 
 export default function Layout() {
   const { pageType } = usePageData()
 
-  const getContent = () => {
-    if (pageType === 'home') {
-      return <HomeLayout />
-    } else if (pageType === 'doc') {
-      return <div>Doc</div>
-    } else {
-      return <div>404</div>
-    }
-  }
-
   return (
     <div>
       <Nav />
-      {getContent()}
+      {getContent(pageType)}
     </div>
   )
 }

@@ -1,6 +1,8 @@
-import { createServer, ViteDevServer } from 'vite'
-import { PACKAGE_ROOT } from './constants'
+import type { ViteDevServer } from 'vite'
+import { createServer } from 'vite'
+
 import { resolveConfig } from './config'
+import { PACKAGE_ROOT } from './constants'
 import { createVitePlugins } from './vitePlugins'
 
 export async function createDevServer(

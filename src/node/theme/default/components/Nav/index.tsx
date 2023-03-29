@@ -1,7 +1,7 @@
-import { NavItemWithLink } from '../../../../../shared/types'
-import styles from './index.module.scss'
 import { usePageData } from '../../../../../runtime'
+import type { NavItemWithLink } from '../../../../../shared/types'
 import SwitchAppearance from '../SwitchAppearance'
+import styles from './index.module.scss'
 
 export function MenuItem(item: NavItemWithLink) {
   return (
@@ -40,7 +40,7 @@ export default function Nav() {
           {/* 相关链接 */}
           <div className={styles.socialLinkIcon} before="menu-item-before">
             <a href="/">
-              <div className="i-carbon-logo-github w-5 h-5 fill-current"></div>
+              <div className="i-carbon-logo-github w-5 h-5 fill-current" />
             </a>
           </div>
         </div>

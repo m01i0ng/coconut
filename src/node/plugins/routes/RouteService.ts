@@ -1,6 +1,6 @@
 import fg from 'fast-glob'
-import { normalizePath } from 'vite'
 import { relative } from 'path'
+import { normalizePath } from 'vite'
 
 interface RouteMeta {
   routePath: string

@@ -1,7 +1,8 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import App, { initPageData } from './App'
 import { BrowserRouter } from 'react-router-dom'
+
+import App, { initPageData } from './App'
 import { DataContext } from './hooks'
 
 async function renderInBrowser() {

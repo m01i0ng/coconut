@@ -24,6 +24,7 @@ specifiers:
   eslint: ^8.36.0
   eslint-config-alloy: ^4.9.0
   eslint-plugin-react: ^7.32.2
+  eslint-plugin-simple-import-sort: ^10.0.0
   execa: ^7.1.1
   fast-glob: ^3.2.12
   fs-extra: ^11.1.1
@@ -111,6 +112,7 @@ devDependencies:
   eslint: 8.36.0
   eslint-config-alloy: 4.9.0_d6637q4eervl76cfkbbrgcvvfa
   eslint-plugin-react: 7.32.2_eslint@8.36.0
+  eslint-plugin-simple-import-sort: 10.0.0_eslint@8.36.0
   execa: 7.1.1
   husky: 8.0.3
   lint-staged: 13.2.0
@@ -2404,6 +2406,14 @@ packages:
       resolve: 2.0.0-next.4
       semver: 6.3.0
       string.prototype.matchall: 4.0.8
+    dev: true
+
+  /eslint-plugin-simple-import-sort/10.0.0_eslint@8.36.0:
+    resolution: {integrity: sha512-AeTvO9UCMSNzIHRkg8S6c3RPy5YEwKWSQPx3DYghLedo2ZQxowPFLGDN1AZ2evfg6r6mjBSZSLxLFsWSu3acsw==}
+    peerDependencies:
+      eslint: '>=5.0.0'
+    dependencies:
+      eslint: 8.36.0
     dev: true
 
   /eslint-scope/5.1.1:
