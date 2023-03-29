@@ -7,7 +7,7 @@ test('Ensure page rendering right', async ({ page }) => {
 
   const res = await page.evaluate(async () => {
     const content = document.body.innerText
-    return content.includes('Layout component')
+    return content.includes('coconut')
   })
   expect(res).toBe(true)
 })
