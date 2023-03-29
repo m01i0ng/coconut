@@ -11,6 +11,7 @@ type RenderFunc = (routePath: string) => string
 async function renderPage(render: RenderFunc, routes: Route[], root: string, csrBundle) {
   console.log(`Rendering page in server...`)
   const csrChunk = csrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
+  // 顶层路由遍历，生成多入口并行打包任务
   return Promise.all(
     routes.map(async (route) => {
       const routePath = route.path
@@ -71,8 +72,12 @@ async function bundle(root: string, config: SiteConfig) {
 }
 
 export default async function build(root = process.cwd(), config: SiteConfig) {
-  const [csrBundle] = await bundle(root, config)
-  const serverEntryPath = join(root, '.temp', 'ssr-entry.js')
+  const [csrBundle, ssrBundle] = await bundle(root, config)
+
+  const ssrChunk = ssrBundle.output.find((c) => c.type === 'chunk' && c.isEntry)
+
+  const serverEntryPath = join(root, '.temp', ssrChunk.fileName)
+  // ssr-entry.ts 文件中导出了所有的路由路径
   const { render, routes } = await import(serverEntryPath)
   try {
     await renderPage(render as RenderFunc, routes as Route[], root, csrBundle)
