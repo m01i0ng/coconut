@@ -1,11 +1,13 @@
 import { Plugin } from 'vite'
 import { ReactElement } from 'react'
 import { RouteService } from './RouteService'
+import { PageModule } from '../../../shared/types/page'
 
 export interface Route {
   path: string
   element: ReactElement
   filePath: string
+  preload: () => Promise<PageModule>
 }
 
 interface PluginOptions {
