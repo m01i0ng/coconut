@@ -10,6 +10,7 @@ export interface Route {
 
 interface PluginOptions {
   root: string
+  isSSR: boolean
 }
 
 export const ROUTE_ID = 'coconut:routes'
@@ -25,7 +26,7 @@ export default function pluginRoutes(options: PluginOptions): Plugin {
     },
     load(id: string) {
       if (id === '\0' + ROUTE_ID) {
-        return routeService.generateRouteCode()
+        return routeService.generateRouteCode(options.isSSR)
       }
     },
     async configResolved() {

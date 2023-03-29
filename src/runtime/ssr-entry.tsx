@@ -9,3 +9,5 @@ export function render() {
     </StaticRouter>,
   )
 }
+
+export { routes } from 'coconut:routes'

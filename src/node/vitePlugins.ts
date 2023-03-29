@@ -5,7 +5,7 @@ import pluginSiteData from './plugins/site-data'
 import pluginRoutes from './plugins/routes'
 import pluginMdx from './plugins/mdx'
 
-export function createVitePlugins(config: SiteConfig, restartServer?: () => Promise<void>) {
+export function createVitePlugins(config: SiteConfig, restartServer?: () => Promise<void>, isSSR = false) {
   return [
     pluginIndexHtml(),
     pluginReact({
@@ -14,6 +14,7 @@ export function createVitePlugins(config: SiteConfig, restartServer?: () => Prom
     pluginSiteData(config, restartServer),
     pluginRoutes({
       root: config.root,
+      isSSR,
     }),
     pluginMdx(),
   ]

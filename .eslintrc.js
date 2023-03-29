@@ -16,6 +16,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'prefer-const': 'error',
     'prefer-arrow-callback': 'error',
+    'max-params': 'off',
   },
   settings: {},
 }
