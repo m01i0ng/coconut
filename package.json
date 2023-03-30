@@ -25,12 +25,12 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier -w",
-      "eslint --fix"
+      "prettier --ignore-unknown -w",
+      "eslint --cache --fix"
     ],
     "*.{ts,tsx}": [
-      "prettier --parser=typescript -w",
-      "eslint --fix"
+      "prettier --parser=typescript --ignore-unknown -w",
+      "eslint --cache --fix"
     ]
   },
   "packageManager": "pnpm@8.1.0",

@@ -26,10 +26,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
 
-      - name: Install deps with dependabot
-        if: ${{ github.actor == 'dependabot[bot]' }}
-        run: pnpm i --no-frozen-lockfile
-
       - name: Install deps normally
         if: ${{ github.actor != 'dependabot[bot]' }}
         run: pnpm i
@@ -54,10 +50,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
-
-      - name: Install deps with dependabot
-        if: ${{ github.actor == 'dependabot[bot]' }}
-        run: pnpm i --no-frozen-lockfile
 
       - name: Install deps normally
         if: ${{ github.actor != 'dependabot[bot]' }}
