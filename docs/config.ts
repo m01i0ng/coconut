@@ -20,6 +20,10 @@ export default defineConfig({
               text: 'How to',
               link: '/guide/how-to',
             },
+            {
+              text: 'Faq',
+              link: '/guide/faq',
+            },
           ],
         },
       ],

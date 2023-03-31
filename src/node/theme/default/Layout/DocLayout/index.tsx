@@ -1,7 +1,9 @@
 import { useLocation } from 'react-router-dom'
 
-import { usePageData } from '../../../../../runtime'
+import { Content, usePageData } from '../../../../../runtime'
 import Sidebar from '../../components/Sidebar'
+import DocFooter from '../DocFooter'
+import styles from './index.module.scss'
 
 export default function DocLayout() {
   const { siteData } = usePageData()
@@ -15,6 +17,14 @@ export default function DocLayout() {
   return (
     <div>
       <Sidebar sidebarData={matchedSidebar} pathname={pathname} />
+      <div className={styles.content}>
+        <div>
+          <div className="coconut-doc">
+            <Content />
+          </div>
+          <DocFooter />
+        </div>
+      </div>
     </div>
   )
 }

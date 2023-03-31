@@ -29,4 +29,5 @@
     32px,
     calc(32px + (100vw - var(--coconut-layout-max-width)) / 2)
   );
+  background-color: var(--coconut-c-bg);
 }

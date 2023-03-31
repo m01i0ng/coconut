@@ -1,0 +1,405 @@
+/**
+ * Headings
+ * -------------------------------------------------------------------------- */
+
+.coconut-doc h1,
+.coconut-doc h2,
+.coconut-doc h3,
+.coconut-doc h4,
+.coconut-doc h5,
+.coconut-doc h6 {
+  position: relative;
+  font-weight: 600;
+  outline: none;
+}
+
+.coconut-doc h1 {
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.coconut-doc h2 {
+  margin: 48px 0 16px;
+  /* padding-top: 24px; */
+  letter-spacing: -0.02em;
+  line-height: 32px;
+  font-size: 24px;
+}
+
+.coconut-doc h3 {
+  margin: 32px 0 0;
+  letter-spacing: -0.01em;
+  line-height: 28px;
+  font-size: 20px;
+}
+
+.coconut-doc .header-anchor {
+  float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  font-weight: 500;
+  opacity: 0;
+  transition: color 0.25s, opacity 0.25s;
+}
+
+.coconut-doc h1:hover .header-anchor,
+.coconut-doc h1 .header-anchor:focus,
+.coconut-doc h2:hover .header-anchor,
+.coconut-doc h2 .header-anchor:focus,
+.coconut-doc h3:hover .header-anchor,
+.coconut-doc h3 .header-anchor:focus,
+.coconut-doc h4:hover .header-anchor,
+.coconut-doc h4 .header-anchor:focus,
+.coconut-doc h5:hover .header-anchor,
+.coconut-doc h5 .header-anchor:focus,
+.coconut-doc h6:hover .header-anchor,
+.coconut-doc h6 .header-anchor:focus {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .coconut-doc h1 {
+    letter-spacing: -0.02em;
+    line-height: 40px;
+    font-size: 32px;
+  }
+}
+
+/**
+   * Paragraph and inline elements
+   * -------------------------------------------------------------------------- */
+
+.coconut-doc p,
+.coconut-doc summary {
+  margin: 16px 0;
+}
+
+.coconut-doc p {
+  z-index: 2;
+  line-height: 28px;
+}
+
+.coconut-doc blockquote {
+  margin: 16px 0;
+  border-left: 2px solid var(--coconut-c-divider);
+  padding-left: 16px;
+  transition: border-color 0.5s;
+}
+
+.coconut-doc blockquote > p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--coconut-c-text-2);
+  transition: color 0.5s;
+}
+
+.coconut-doc a {
+  font-weight: 500;
+  color: var(--coconut-c-brand);
+  text-decoration-style: dotted;
+  transition: color 0.25s;
+}
+
+.coconut-doc a:hover {
+  color: var(--coconut-c-brand-dark);
+}
+
+.coconut-doc strong {
+  font-weight: 600;
+}
+
+/**
+   * Lists
+   * -------------------------------------------------------------------------- */
+
+.coconut-doc ul,
+.coconut-doc ol {
+  padding-left: 1.25rem;
+  margin: 16px 0;
+}
+
+.coconut-doc ul {
+  list-style: disc;
+}
+
+.coconut-doc ol {
+  list-style: decimal;
+}
+
+.coconut-doc li + li {
+  margin-top: 8px;
+}
+
+.coconut-doc li > ol,
+.coconut-doc li > ul {
+  margin: 8px 0 0;
+}
+
+/**
+   * Table
+   * -------------------------------------------------------------------------- */
+
+.coconut-doc table {
+  display: block;
+  border-collapse: collapse;
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.coconut-doc tr {
+  border-top: 1px solid var(--coconut-c-divider);
+  transition: background-color 0.5s;
+}
+
+.coconut-doc tr:nth-child(2n) {
+  background-color: var(--coconut-c-bg-soft);
+}
+
+.coconut-doc th,
+.coconut-doc td {
+  border: 1px solid var(--coconut-c-divider);
+  padding: 12px 16px;
+}
+
+.coconut-doc th {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: var(--coconut-c-white-soft);
+}
+
+.dark .coconut-doc th {
+  background-color: var(--coconut-c-black);
+}
+
+/**
+   * Decorational elements
+   * -------------------------------------------------------------------------- */
+
+.coconut-doc hr {
+  margin: 16px 0;
+  border: none;
+  border-top: 1px solid var(--coconut-c-divider-light);
+}
+
+/**
+   * Custom Block
+   * -------------------------------------------------------------------------- */
+
+.coconut-doc .custom-block {
+  margin: 16px 0;
+}
+
+.coconut-doc .custom-block p {
+  margin: 8px 0;
+  line-height: 24px;
+}
+
+.coconut-doc .custom-block p:first-child {
+  margin: 0;
+}
+
+.coconut-doc .custom-block a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: opacity 0.25s;
+}
+
+.coconut-doc .custom-block a:hover {
+  opacity: 0.6;
+}
+
+.coconut-doc .custom-block code {
+  font-size: var(--coconut-custom-block-code-font-size);
+  font-weight: 700;
+  color: inherit;
+}
+
+.coconut-doc .custom-block div[class*='language-'] {
+  margin: 8px 0;
+}
+
+.coconut-doc .custom-block div[class*='language-'] code {
+  font-weight: 400;
+  background-color: transparent;
+}
+
+/**
+   * Code
+   * -------------------------------------------------------------------------- */
+
+/* inline code */
+.coconut-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
+  font-size: var(--coconut-code-font-size);
+}
+
+.coconut-doc :not(pre, div) > code {
+  border-radius: 4px;
+  padding: 3px 6px;
+  color: var(--coconut-c-text-code);
+  background-color: var(--coconut-c-bg-mute);
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.coconut-doc h1 > code,
+.coconut-doc h2 > code,
+.coconut-doc h3 > code {
+  font-size: 0.9em;
+}
+
+.coconut-doc a > code {
+  color: var(--coconut-c-brand);
+  transition: color 0.25s;
+}
+
+.coconut-doc a:hover > code {
+  color: var(--coconut-c-brand-dark);
+}
+
+.coconut-doc div[class*='language-'] {
+  position: relative;
+  margin: 16px -24px;
+  background-color: var(--coconut-code-block-bg);
+  overflow-x: auto;
+  transition: background-color 0.5s;
+}
+
+@media (min-width: 640px) {
+  .coconut-doc div[class*='language-'] {
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .coconut-doc li div[class*='language-'] {
+    border-radius: 8px 0 0 8px;
+  }
+}
+
+.coconut-doc div[class*='language-'] + div[class*='language-'],
+.coconut-doc div[class$='-api'] + div[class*='language-'],
+.coconut-doc
+div[class*='language-']
++ div[class$='-api']
+> div[class*='language-'] {
+  margin-top: -8px;
+}
+
+.coconut-doc [class*='language-'] pre,
+.coconut-doc [class*='language-'] code {
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.coconut-doc [class*='language-'] pre {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 16px 0;
+  background: transparent;
+  overflow-x: auto;
+}
+
+.coconut-doc [class*='language-'] code {
+  display: block;
+  padding: 0 24px;
+  width: fit-content;
+  min-width: 100%;
+  line-height: var(--coconut-code-line-height);
+  font-size: var(--coconut-code-font-size);
+  color: var(--coconut-code-block-color);
+  transition: color 0.5s;
+}
+
+.coconut-doc [class*='language-'] code .highlighted {
+  background-color: var(--coconut-code-line-highlight-color);
+  transition: background-color 0.5s;
+  margin: 0 -24px;
+  padding: 0 24px;
+  width: calc(100% + 2 * 24px);
+  display: inline-block;
+}
+
+.coconut-doc [class*='language-'] > button.copy {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--coconut-code-block-bg);
+  opacity: 0;
+  cursor: pointer;
+  background-image: var(--coconut-icon-copy);
+  background-position: 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  transition: opacity 0.4s;
+}
+
+.coconut-doc [class*='language-']:hover > button.copy,
+.coconut-doc [class*='language-'] > button.copy:focus {
+  opacity: 1;
+}
+
+.coconut-doc [class*='language-'] > button.copy:hover {
+  background-color: var(--coconut-code-copy-code-hover-bg);
+}
+
+.coconut-doc [class*='language-'] > button.copy.copied,
+.coconut-doc [class*='language-'] > button.copy:hover.copied {
+  border-radius: 0 4px 4px 0;
+  background-color: var(--coconut-code-copy-code-hover-bg);
+  background-image: var(--coconut-icon-copied);
+}
+
+.coconut-doc [class*='language-'] > button.copy.copied::before,
+.coconut-doc [class*='language-'] > button.copy:hover.copied::before {
+  position: relative;
+  left: -65px;
+  display: block;
+  border-radius: 4px 0 0 4px;
+  padding-top: 8px;
+  width: 64px;
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--coconut-code-copy-code-active-text);
+  background-color: var(--coconut-code-copy-code-hover-bg);
+  white-space: nowrap;
+  content: 'Copied';
+}
+
+.coconut-doc [class*='language-'] > span.lang {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--coconut-c-text-dark-3);
+  transition: color 0.4s, opacity 0.4s;
+}
+
+.coconut-doc [class*='language-']:hover > button.copy + span.lang,
+.coconut-doc [class*='language-'] > button.copy:focus + span.lang {
+  opacity: 0;
+}

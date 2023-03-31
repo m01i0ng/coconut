@@ -1,8 +1,7 @@
 import 'uno.css'
 import '../style/base.css'
+import '../style/doc.css'
 import '../style/vars.css'
-
-import React from 'react'
 
 import { usePageData } from '../../../../runtime'
 import type { PageType } from '../../../../shared/types'
@@ -30,7 +29,13 @@ export default function Layout() {
   return (
     <div>
       <Nav />
-      {getContent(pageType)}
+      <section
+        style={{
+          paddingTop: 'var(--coconut-nav-height)',
+        }}
+      >
+        {getContent(pageType)}
+      </section>
     </div>
   )
 }
