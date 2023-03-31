@@ -19,3 +19,14 @@
     color: var(--coconut-c-text-1);
   }
 }
+
+.nav {
+  padding-left: max(
+    32px,
+    calc(32px + (100vw - var(--coconut-layout-max-width)) / 2)
+  );
+  padding-right: max(
+    32px,
+    calc(32px + (100vw - var(--coconut-layout-max-width)) / 2)
+  );
+}

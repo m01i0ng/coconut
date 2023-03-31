@@ -1,12 +1,13 @@
+import 'uno.css'
 import '../style/base.css'
 import '../style/vars.css'
-import 'uno.css'
 
 import React from 'react'
 
 import { usePageData } from '../../../../runtime'
 import type { PageType } from '../../../../shared/types'
 import Nav from '../components/Nav'
+import DocLayout from './DocLayout'
 import HomeLayout from './HomeLayout'
 
 const getContent = (pageType: PageType) => {
@@ -14,7 +15,7 @@ const getContent = (pageType: PageType) => {
     case 'home':
       return <HomeLayout />
     case 'doc':
-      return <div>Doc</div>
+      return <DocLayout />
     case '404':
       return <div>404</div>
     case 'custom':

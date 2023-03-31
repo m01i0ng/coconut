@@ -7,5 +7,22 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
     ],
+    sidebar: {
+      '/guide/': [
+        {
+          text: 'Guide',
+          items: [
+            {
+              text: 'Quickstart',
+              link: '/guide/quickstart',
+            },
+            {
+              text: 'How to',
+              link: '/guide/how-to',
+            },
+          ],
+        },
+      ],
+    },
   },
 })
