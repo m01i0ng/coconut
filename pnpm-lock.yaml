@@ -142,8 +142,8 @@ devDependencies:
     specifier: ^8.36.0
     version: 8.36.0
   eslint-config-alloy:
-    specifier: ^4.9.0
-    version: 4.9.0(@typescript-eslint/eslint-plugin@5.56.0)(@typescript-eslint/parser@5.56.0)(eslint-plugin-react@7.32.2)(eslint@8.36.0)(typescript@5.0.2)
+    specifier: ^5.0.0
+    version: 5.0.0(@typescript-eslint/eslint-plugin@5.56.0)(@typescript-eslint/parser@5.56.0)(eslint-plugin-react@7.32.2)(eslint@8.36.0)(typescript@5.0.2)
   eslint-plugin-react:
     specifier: ^7.32.2
     version: 7.32.2(eslint@8.36.0)
@@ -2453,17 +2453,17 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /eslint-config-alloy@4.9.0(@typescript-eslint/eslint-plugin@5.56.0)(@typescript-eslint/parser@5.56.0)(eslint-plugin-react@7.32.2)(eslint@8.36.0)(typescript@5.0.2):
-    resolution: {integrity: sha512-4DfiN0sXByf5WuXioZrrZJdfzZw+lgdoQfFTuQyFenJ2XeIKrsXYctArLiZAoAsTxyZnmUFYqrgwUIXx26q0gg==}
+  /eslint-config-alloy@5.0.0(@typescript-eslint/eslint-plugin@5.56.0)(@typescript-eslint/parser@5.56.0)(eslint-plugin-react@7.32.2)(eslint@8.36.0)(typescript@5.0.2):
+    resolution: {integrity: sha512-ikYrtxBj1yQM0QQUzx3M3VWB0of4CBBYJs6gX47f/Jd8XCHREBkDk8GhqsX7K0aunsdv7GS/dtf+gIHEajRy4g==}
     peerDependencies:
       '@babel/eslint-parser': 7.x
       '@babel/preset-react': 7.x
-      '@typescript-eslint/eslint-plugin': '>=5.38.1'
+      '@typescript-eslint/eslint-plugin': '>=5.55.0'
       '@typescript-eslint/parser': 5.x
       eslint: '>=8.24.0'
       eslint-plugin-react: '>=7.31.8'
       eslint-plugin-vue: '>=9.5.1'
-      typescript: 4.x
+      typescript: 5.x
       vue-eslint-parser: 9.x
     peerDependenciesMeta:
       '@babel/eslint-parser':
