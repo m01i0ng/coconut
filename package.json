@@ -37,7 +37,7 @@
   "dependencies": {
     "@loadable/component": "^5.15.3",
     "@mdx-js/rollup": "^2.3.0",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "acorn": "^8.8.2",
     "cac": "^6.7.14",
     "chalk": "^5.2.0",
