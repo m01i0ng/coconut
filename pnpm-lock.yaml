@@ -65,8 +65,8 @@ dependencies:
     specifier: ^2.3.0
     version: 2.3.0
   remark-mdx-frontmatter:
-    specifier: ^2.1.1
-    version: 2.1.1
+    specifier: ^3.0.0
+    version: 3.0.0
   remark-parse:
     specifier: ^10.0.1
     version: 10.0.1
@@ -2661,9 +2661,9 @@ packages:
       source-map: 0.7.4
     dev: false
 
-  /estree-util-value-to-estree@2.1.0:
-    resolution: {integrity: sha512-fcAWmZilY1+tEt7GSeLZoHDvp2NNgLkJznBRYkEpaholas41d+Y0zd/Acch7+qzZdxLtxLi+m04KjHFJSoMa6A==}
-    engines: {node: '>=14.0.0'}
+  /estree-util-value-to-estree@3.0.1:
+    resolution: {integrity: sha512-b2tdzTurEIbwRh+mKrEcaWfu1wgb8J1hVsgREg7FFiecWwK/PhO8X0kyc+0bIcKNtD4sqxIdNoRy6/p/TvECEA==}
+    engines: {node: '>=16.0.0'}
     dependencies:
       '@types/estree': 1.0.0
       is-plain-obj: 4.1.0
@@ -5053,13 +5053,13 @@ packages:
       - supports-color
     dev: false
 
-  /remark-mdx-frontmatter@2.1.1:
-    resolution: {integrity: sha512-kH8R4FcZ9VD2Uak9FuEgoZnKdIXhIXA3kYVB+6hkoWgYXbgpZNetgiAw58q4Z0MMN3W+nfkg7Fv6bcJTr1Y8BQ==}
-    engines: {node: '>=14.0.0'}
+  /remark-mdx-frontmatter@3.0.0:
+    resolution: {integrity: sha512-Tnkz8n/fxZGKMBaFJa5jKumJPpuTr9eZF+u+4UcnlUNmUQP3h8ZwgaTzIvkVb6QjG6QE0itsP5JjWnkEBz8IJw==}
+    engines: {node: '>=16.0.0'}
     dependencies:
       '@types/mdast': 3.0.11
       estree-util-is-identifier-name: 2.1.0
-      estree-util-value-to-estree: 2.1.0
+      estree-util-value-to-estree: 3.0.1
       toml: 3.0.0
       unified: 10.1.2
       yaml: 2.2.1
