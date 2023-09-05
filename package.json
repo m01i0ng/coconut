@@ -88,7 +88,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "execa": "^7.1.1",
     "husky": "^8.0.0",
-    "lint-staged": "^13.2.0",
+    "lint-staged": "^14.0.0",
     "prettier": "^3.0.0",
     "sass": "^1.60.0",
     "serve": "^14.2.0",
