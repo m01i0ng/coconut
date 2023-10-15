@@ -58,7 +58,7 @@
     "remark-mdx": "^2.3.0",
     "remark-mdx-frontmatter": "^3.0.0",
     "remark-parse": "^11.0.0",
-    "remark-rehype": "^10.1.0",
+    "remark-rehype": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "shiki": "^0.14.1",
     "sirv": "^2.0.2",
