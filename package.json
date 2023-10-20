@@ -68,8 +68,8 @@
     "vite": "^4.2.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.5.0",
-    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/cli": "^18.0.0",
+    "@commitlint/config-conventional": "^18.0.0",
     "@iconify-json/carbon": "^1.1.16",
     "@playwright/test": "^1.32.1",
     "@types/fs-extra": "^11.0.1",
@@ -81,7 +81,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitest/ui": "^0.34.0",
-    "commitlint": "^17.5.0",
+    "commitlint": "^18.0.0",
     "eslint": "^8.36.0",
     "eslint-config-alloy": "^5.0.0",
     "eslint-plugin-react": "^7.32.2",
