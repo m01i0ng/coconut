@@ -36,7 +36,7 @@
   "packageManager": "pnpm@8.9.2",
   "dependencies": {
     "@loadable/component": "^5.15.3",
-    "@mdx-js/rollup": "^2.3.0",
+    "@mdx-js/rollup": "^3.0.0",
     "@vitejs/plugin-react": "^4.0.0",
     "acorn": "^8.8.2",
     "cac": "^6.7.14",
@@ -55,7 +55,7 @@
     "rehype-stringify": "^9.0.3",
     "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
-    "remark-mdx": "^2.3.0",
+    "remark-mdx": "^3.0.0",
     "remark-mdx-frontmatter": "^3.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^10.1.0",
